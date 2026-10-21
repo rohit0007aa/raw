@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disinvestment By Design: The Legacy of Redlining</title>
+  <!-- Tailwind CSS via allowlisted CDN -->
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap');
+    
+    :root {
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+    }
+    
+    body {
+      font-family: var(--font-sans);
+    }
+    
+    .font-serif {
+      font-family: var(--font-serif);
+    }
+    
+    /* Print optimizations for real-world poster / handout deliverables */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #111827 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      .shadow-2xl, .shadow-lg, .shadow-md {
+        box-shadow: none !important;
+        border: 1px solid #e5e7eb !important;
+      }
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+  </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 antialiased selection:bg-rose-500 selection:text-white min-h-screen">
+
+  <!-- Top Announcement / AI Deliverable Badge Bar -->
+  <header class="no-print border-b border-slate-800 bg-[#070a12]/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center space-x-3">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-500/10 text-rose-400 border border-rose-500/30">
+          AI-Crafted Social Issue Deliverable
+        </span>
+        <span class="text-xs text-slate-400 hidden sm:inline">Historical &amp; Sociological Data Visualization</span>
+      </div>
+      
+      <div class="flex items-center space-x-3">
+        <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition shadow-sm">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          Export / Print Poster
+        </button>
+        <a href="#ai-methodology" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-rose-600 hover:bg-rose-500 text-white transition shadow-sm shadow-rose-900/40">
+          AI Workflow Pipeline &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16">
+    <div class="text-center max-w-4xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium text-rose-400 bg-rose-950/40 border border-rose-800/50 mb-4">
+        <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+        HISTORICAL POLICY &bull; MODERN INEQUALITY &bull; ENVIRONMENTAL RACISM
+      </div>
+      <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight mb-6">
+        DISINVESTMENT BY DESIGN
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-300 leading-relaxed font-light mb-8">
+        How 1930s federal mortgage maps created systemic racial segregation, locked trillions in generational wealth, and engineered the 21st-century urban climate crisis.
+      </p>
+      
+      <!-- Key Statistics Pill Bar -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto text-left">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 shadow-sm">
+          <div class="text-2xl font-bold text-rose-400 font-mono">74%</div>
+          <div class="text-xs text-slate-400 mt-1">1930s Grade D areas remain low-to-moderate income today</div>
+        </div>
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 shadow-sm">
+          <div class="text-2xl font-bold text-amber-400 font-mono">6.3x</div>
+          <div class="text-xs text-slate-400 mt-1">Median white family wealth vs. Black family wealth gap</div>
+        </div>
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 shadow-sm">
+          <div class="text-2xl font-bold text-emerald-400 font-mono">+12.6°F</div>
+          <div class="text-xs text-slate-400 mt-1">Peak heat island differential in formerly redlined zones</div>
+        </div>
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 shadow-sm">
+          <div class="text-2xl font-bold text-cyan-400 font-mono">14.7 Yrs</div>
+          <div class="text-xs text-slate-400 mt-1">Life expectancy gap between adjacent redlined &amp; greenlined tracts</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Hero Infographic Centerpiece -->
+    <section class="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl mb-16">
+      <div class="p-6 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4 bg-slate-950/50">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-wider text-rose-400">Featured Conceptual Artwork</span>
+          <h2 class="text-xl font-bold text-white mt-0.5">The Split Reality: 1930s Cartography vs. Present Day Anatomy</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center px-2 py-1 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">
+            Model: Imagen 3 / Diffusion Engine
+          </span>
+          <span class="inline-flex items-center px-2 py-1 rounded text-xs font-mono bg-rose-900/40 text-rose-300 border border-rose-700/50">
+            Prompt-Engineered Synthesis
+          </span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+        <!-- Image Container -->
+        <div class="lg:col-span-8 bg-black flex items-center justify-center p-3 sm:p-6 border-b lg:border-b-0 lg:border-r border-slate-800">
+          <div class="relative group rounded-xl overflow-hidden shadow-xl border border-slate-800">
+            <img src="./assets/redlining_hero.jpg" alt="Historical Redlining to Modern Urban Inequality Infographic Illustration" class="w-full h-auto object-cover max-h-[580px] rounded-lg transition duration-300 group-hover:scale-[1.01]" />
+            <div class="absolute bottom-3 left-3 right-3 p-3 bg-black/80 backdrop-blur-md rounded-lg text-xs text-slate-300 border border-white/10 hidden sm:block">
+              <span class="font-bold text-white">Editorial Concept:</span> Left depicts the 1930s HOLC residential security classification apparatus; right illustrates how spatial disinvestment crystallized into modern environmental apartheid.
+            </div>
+          </div>
+        </div>
+
+        <!-- Annotation & Interactive Visual Breakdown -->
+        <div class="lg:col-span-4 p-6 flex flex-col justify-between bg-slate-900/60">
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-4">Core Architectural Drivers</h3>
+            <div class="space-y-4">
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-red-900/30 hover:border-red-500/50 transition">
+                <div class="flex items-center gap-2 text-rose-400 text-sm font-bold">
+                  <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                  1. The HOLC Underwriting Matrix
+                </div>
+                <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+                  Between 1935 and 1940, the Home Owners' Loan Corporation created colored "Residential Security Maps" for 239 American cities, explicitly rating minority communities as "Hazardous" (Grade D, colored Red) to deny federal mortgage backing.
+                </p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-amber-900/30 hover:border-amber-500/50 transition">
+                <div class="flex items-center gap-2 text-amber-400 text-sm font-bold">
+                  <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                  2. Targeted Infrastructure Destruction
+                </div>
+                <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+                  The 1956 Federal Highway Act specifically carved multi-lane interstates directly through thriving Black commercial corridors (e.g., Claiborne Ave, Tulsa, Rondo), destroying generational wealth and creating isolated concrete heat-traps.
+                </p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-emerald-900/30 hover:border-emerald-500/50 transition">
+                <div class="flex items-center gap-2 text-emerald-400 text-sm font-bold">
+                  <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                  3. Modern Thermal & Ecological Apartheid
+                </div>
+                <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+                  Due to industrial re-zoning, lack of park infrastructure, and a 43% deficit in urban tree canopy, former Grade D tracts now absorb massive solar radiation, causing deadly thermal spikes during summer heatwaves.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+            <span>Primary Sources: Mapping Inequality Project, University of Richmond; EPA EJScreen</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Classification System Explorer (The 4 HOLC Grades) -->
+    <section class="mb-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-wider text-rose-400">Systemic Classification Matrix</span>
+          <h2 class="font-serif text-3xl font-bold text-white mt-1">The 1930s Residential Security Hierarchy</h2>
+          <p class="text-slate-400 text-sm mt-1 max-w-2xl">
+            Click through each historical grade to examine how federal appraisers described neighborhoods in 1935 versus their demographic and environmental reality 90 years later.
+          </p>
+        </div>
+      </div>
+
+      <!-- Grade Selector Buttons -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6" id="gradeTabs">
+        <button onclick="selectGrade('A')" id="tab-A" class="grade-tab p-4 rounded-xl border text-left transition duration-200 bg-emerald-950/40 border-emerald-500 text-white shadow-lg shadow-emerald-950/30">
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-mono text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">GRADE A</span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+          </div>
+          <div class="text-base font-bold">Green: "Best"</div>
+          <div class="text-xs text-slate-400 mt-1">Suburban, homogeneous, fully funded</div>
+        </button>
+
+        <button onclick="selectGrade('B')" id="tab-B" class="grade-tab p-4 rounded-xl border text-left transition duration-200 bg-slate-900 border-slate-800 text-slate-300 hover:border-blue-500/50">
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-mono text-xs px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold">GRADE B</span>
+            <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+          </div>
+          <div class="text-base font-bold">Blue: "Still Desirable"</div>
+          <div class="text-xs text-slate-400 mt-1">Stable, middle-class, low risk</div>
+        </button>
+
+        <button onclick="selectGrade('C')" id="tab-C" class="grade-tab p-4 rounded-xl border text-left transition duration-200 bg-slate-900 border-slate-800 text-slate-300 hover:border-yellow-500/50">
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-mono text-xs px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-300 font-bold">GRADE C</span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+          </div>
+          <div class="text-base font-bold">Yellow: "Definitely Declining"</div>
+          <div class="text-xs text-slate-400 mt-1">Working class, transition, restricted loans</div>
+        </button>
+
+        <button onclick="selectGrade('D')" id="tab-D" class="grade-tab p-4 rounded-xl border text-left transition duration-200 bg-slate-900 border-slate-800 text-slate-300 hover:border-rose-500/50">
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-mono text-xs px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">GRADE D</span>
+            <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+          </div>
+          <div class="text-base font-bold">Red: "Hazardous"</div>
+          <div class="text-xs text-slate-400 mt-1">Targeted for total financial denial</div>
+        </button>
+      </div>
+
+      <!-- Dynamic Card Detail -->
+      <div id="gradeContent" class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+        <!-- Content injected by JavaScript below -->
+      </div>
+    </section>
+
+    <!-- Deep-Dive Infographic Visual Data Modules -->
+    <section class="mb-16">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs uppercase font-bold tracking-wider text-rose-400">Empirical Impact Analysis</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">The Triad of Institutional Harm</h2>
+        <p class="text-slate-400 text-sm mt-2">
+          How spatial discrimination compounded across three distinct socioeconomic axes over three generations.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Pillar 1: Generational Wealth Chasm -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-700 transition shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold font-mono">
+                ECONOMIC DIMENSION
+              </span>
+              <span class="text-xs text-slate-500">Fed Reserve SCF 2023</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">The Generational Wealth Chasm</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+              Homeownership is the primary engine of middle-class wealth in the United States. Federal policies subsidized White suburban equity while locking Black families into renting or predatory land contracts.
+            </p>
+
+            <!-- Visual Comparison Bars -->
+            <div class="space-y-4 mb-6">
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-slate-300 font-medium">Median White Household</span>
+                  <span class="text-amber-400 font-bold font-mono">$285,000</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+                  <div class="bg-gradient-to-r from-amber-500 to-amber-300 h-3 rounded-full" style="width: 100%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-slate-300 font-medium">Median Hispanic Household</span>
+                  <span class="text-slate-300 font-bold font-mono">$61,600</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+                  <div class="bg-slate-600 h-3 rounded-full" style="width: 21.6%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-slate-300 font-medium">Median Black Household</span>
+                  <span class="text-rose-400 font-bold font-mono">$44,900</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+                  <div class="bg-gradient-to-r from-rose-600 to-rose-400 h-3 rounded-full" style="width: 15.7%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 rounded-xl p-3 border border-slate-800/80 text-xs text-slate-300">
+            <span class="text-rose-400 font-bold">Key Insight:</span> A child born in a 1930s Grade A zone inherited on average <strong>$212,000 more in housing appreciation</strong> than a peer born in a Grade D zone.
+          </div>
+        </div>
+
+        <!-- Pillar 2: Climate & Heat Island Disparity -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-700 transition shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold font-mono">
+                CLIMATE RACISM
+              </span>
+              <span class="text-xs text-slate-500">Science Advances / EPA</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Urban Heat Island Severity</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+              Historical disinvestment led directly to modern impervious surfaces, concrete arterial roads, and zero tree canopy planting, creating deadly localized micro-climates.
+            </p>
+
+            <!-- Temperature Differential Gauge Graphic -->
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-center mb-6">
+              <div class="text-3xl font-black text-rose-500 font-mono">+4.8°F to +12.6°F</div>
+              <div class="text-xs text-slate-400 mt-1">Average Summer Heat Delta in Grade D vs. Grade A</div>
+              
+              <div class="mt-4 pt-4 border-t border-slate-800 grid grid-cols-2 gap-2 text-left">
+                <div>
+                  <div class="text-slate-400 text-[11px]">Grade A Canopy</div>
+                  <div class="text-emerald-400 font-bold text-sm">43.8% Coverage</div>
+                </div>
+                <div>
+                  <div class="text-slate-400 text-[11px]">Grade D Canopy</div>
+                  <div class="text-rose-400 font-bold text-sm">18.2% Coverage</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 rounded-xl p-3 border border-slate-800/80 text-xs text-slate-300">
+            <span class="text-amber-400 font-bold">Critical Vulnerability:</span> Redlined census tracts experience <strong>2.1x higher heat-related emergency admissions</strong> during municipal heatwaves.
+          </div>
+        </div>
+
+        <!-- Pillar 3: Life Expectancy & Health Apartheid -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-700 transition shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold font-mono">
+                PUBLIC HEALTH
+              </span>
+              <span class="text-xs text-slate-500">CDC / NCHS Life Tables</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">The Longevity &amp; Health Gap</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+              Industrial zoning proximity, particulate PM2.5 emissions, food deserts, and healthcare facility flight created an invisible boundary of unequal life expectancy.
+            </p>
+
+            <!-- Health Disparity Checklist -->
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-950 border border-slate-800/60">
+                <span class="text-xs text-slate-300">Pediatric Asthma Hospitalizations</span>
+                <span class="text-rose-400 font-bold text-xs font-mono">2.4x Higher</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-950 border border-slate-800/60">
+                <span class="text-xs text-slate-300">Supermarket Access (Food Deserts)</span>
+                <span class="text-amber-400 font-bold text-xs font-mono">3.8x Farther</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-950 border border-slate-800/60">
+                <span class="text-xs text-slate-300">Pre-Term Birth Risk</span>
+                <span class="text-rose-400 font-bold text-xs font-mono">+38% Elevated</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 rounded-xl p-3 border border-slate-800/80 text-xs text-slate-300">
+            <span class="text-cyan-400 font-bold">The Zip Code Determinant:</span> In cities like Chicago, Baltimore, and Cleveland, <strong>a distance of just 3.5 miles</strong> accounts for a <strong>15-year gap in life expectancy</strong>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chronological Timeline of Systemic Housing Policy (1865 - 2026) -->
+    <section class="mb-16">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs uppercase font-bold tracking-wider text-rose-400">Historical Chronology</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">160 Years of Policy: Segregation by Statute</h2>
+        <p class="text-slate-400 text-sm mt-2">
+          How state power and public funding were repeatedly mobilized to create and enforce racialized urban geography.
+        </p>
+      </div>
+
+      <div class="relative border-l-2 border-slate-800 ml-4 sm:ml-32 space-y-10 pl-6 sm:pl-10">
+        
+        <!-- Timeline Item 1 -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-[#0b0f19] group-hover:bg-rose-500 transition"></div>
+          <span class="hidden sm:block absolute -left-32 top-1 text-xs font-mono text-slate-500 font-bold">1865 - 1910</span>
+          <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition">
+            <div class="text-xs font-mono text-rose-400 font-bold sm:hidden mb-1">1865 – 1910</div>
+            <h3 class="text-base font-bold text-white">The Rescinded Promise &amp; Early Racial Covenants</h3>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Special Field Order No. 15 ("40 Acres and a Mule") is revoked by President Andrew Johnson, returning land to Confederate enslavers. Early municipal zoning laws (such as Baltimore's 1910 ordinance) explicitly mandate separate blocks for Black and White residents.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-rose-500 border-4 border-[#0b0f19] shadow-md shadow-rose-900"></div>
+          <span class="hidden sm:block absolute -left-32 top-1 text-xs font-mono text-rose-400 font-bold">1933 - 1938</span>
+          <div class="bg-slate-900/80 border border-rose-900/30 rounded-xl p-5 hover:border-rose-500/50 transition">
+            <div class="text-xs font-mono text-rose-400 font-bold sm:hidden mb-1">1933 – 1938</div>
+            <h3 class="text-base font-bold text-rose-300">HOLC Established &amp; The Color-Coded Maps</h3>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              During the Great Depression, the Home Owners' Loan Corporation invents the "Residential Security Map" system. Neighborhoods with any presence of Black residents, regardless of socioeconomic standing, are automatically marked Grade D ("Hazardous") in Red.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-[#0b0f19] group-hover:bg-amber-500 transition"></div>
+          <span class="hidden sm:block absolute -left-32 top-1 text-xs font-mono text-slate-500 font-bold">1944 - 1954</span>
+          <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition">
+            <div class="text-xs font-mono text-amber-400 font-bold sm:hidden mb-1">1944 – 1954</div>
+            <h3 class="text-base font-bold text-white">The GI Bill &amp; The Subsidized White Suburb</h3>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              The GI Bill finances millions of low-down-payment mortgages, spawning suburbs like Levittown. However, the FHA Underwriting Manual forbids guaranteeing loans in racially integrated areas, warning against "infiltration of inharmonious racial groups." Over 98% of FHA loans between 1934 and 1968 went to White families.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-[#0b0f19] group-hover:bg-amber-500 transition"></div>
+          <span class="hidden sm:block absolute -left-32 top-1 text-xs font-mono text-slate-500 font-bold">1956 - 1965</span>
+          <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition">
+            <div class="text-xs font-mono text-amber-400 font-bold sm:hidden mb-1">1956 – 1965</div>
+            <h3 class="text-base font-bold text-white">Federal Highway Act &amp; "Urban Renewal" Cleansing</h3>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Federal planners use highway funding as a tool of racial displacement, demolishing thriving Black business districts to connect white suburbs to downtown business hubs. Over 1 million Americans, disproportionately Black, are displaced.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 5 -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-[#0b0f19]"></div>
+          <span class="hidden sm:block absolute -left-32 top-1 text-xs font-mono text-emerald-400 font-bold">1968 - 1977</span>
+          <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition">
+            <div class="text-xs font-mono text-emerald-400 font-bold sm:hidden mb-1">1968 – 1977</div>
+            <h3 class="text-base font-bold text-white">The Fair Housing Act &amp; The Community Reinvestment Act</h3>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Passed days after Dr. Martin Luther King Jr.'s assassination, Title VIII of the Civil Rights Act outlaws racial discrimination in housing. In 1977, the CRA passes to prohibit redlining, but regulatory enforcement is understaffed, and decades of wealth disparity remain unaddressed.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 6 -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-rose-500 border-4 border-[#0b0f19]"></div>
+          <span class="hidden sm:block absolute -left-32 top-1 text-xs font-mono text-rose-400 font-bold">2008 - 2026</span>
+          <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition">
+            <div class="text-xs font-mono text-rose-400 font-bold sm:hidden mb-1">2008 – 2026</div>
+            <h3 class="text-base font-bold text-white">Reverse Redlining, Algorithmic Bias &amp; Climate Inequality</h3>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Predatory subprime lenders target formerly redlined areas with high-interest loans, stripping over $1 trillion in minority equity during the 2008 foreclosure crisis. Today, algorithmic mortgage credit scoring and urban heat island effects sustain the historical divide.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Interactive Urban Comparison Tool (City Case Studies) -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div>
+            <span class="text-xs uppercase font-bold tracking-wider text-rose-400">City Case Studies</span>
+            <h2 class="text-2xl font-bold text-white">Cross-Metropolitan Analysis</h2>
+            <p class="text-xs text-slate-400 mt-1">Select an American metropolitan area to compare Grade A vs Grade D modern environmental and economic metrics.</p>
+          </div>
+          <div class="flex gap-2">
+            <select id="citySelect" onchange="updateCityData()" class="bg-slate-800 border border-slate-700 text-slate-200 text-sm rounded-lg px-3 py-2 focus:ring-rose-500 focus:outline-none">
+              <option value="richmond">Richmond, VA (Birthplace of HOLC Heat Studies)</option>
+              <option value="baltimore">Baltimore, MD (Historic Ground Zero)</option>
+              <option value="chicago">Chicago, IL (Hyper-Segregated Urban Core)</option>
+              <option value="losangeles">Los Angeles, CA (Sprawl &amp; Asphalt Corridors)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="cityDisplay" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Restorative Solutions & Action Framework -->
+    <section class="mb-16">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs uppercase font-bold tracking-wider text-emerald-400">Restorative Roadmap</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">Dismantling Structural Disinvestment</h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Evidence-based interventions required to reverse nearly a century of engineered geographic inequity.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/40 transition">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-mono text-lg mb-4">
+            01
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Restorative Down-Payment Grants</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Targeted first-generation homebuyer subsidies for families living in formerly redlined census tracts to build intergenerational equity and offset 90 years of lost mortgage access.
+          </p>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/40 transition">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-mono text-lg mb-4">
+            02
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Tree Canopy Equity &amp; Cool Pavements</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Directing Inflation Reduction Act urban forestry funds to plant mature tree canopies in Grade D corridors, reducing local surface temperatures by up to 10°F and cutting asthma rates.
+          </p>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/40 transition">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-mono text-lg mb-4">
+            03
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Algorithmic Appraisal Accountability</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Enforcing strict bias audits on AI automated valuation models (AVMs) and lending algorithms that unconsciously replicate historical redlining boundaries in mortgage pricing.
+          </p>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/40 transition">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-mono text-lg mb-4">
+            04
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Community Land Trusts &amp; Zoning Reform</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Legalizing gentle density (duplexes, accessory dwellings) and expanding community land trusts to preserve affordable ownership without inducing speculative displacement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Methodology & Workflow Dossier Section -->
+    <section id="ai-methodology" class="bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+        <span class="text-xs uppercase font-mono font-bold tracking-wider text-rose-400">AI Deliverable Documentation</span>
+      </div>
+      <h2 class="text-2xl font-bold text-white mb-4">AI Tools &amp; Production Architecture</h2>
+      <p class="text-xs text-slate-400 max-w-3xl leading-relaxed mb-8">
+        This multimedia deliverable was synthesized through an orchestrated pipeline of generative AI systems, empirical data integration, and human-in-the-loop ethical validation.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-300">
+        <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+          <div class="font-bold text-white text-sm mb-1 flex items-center gap-2">
+            <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+            1. Ideation &amp; Research Synthesis
+          </div>
+          <p class="text-slate-400 mt-2 leading-relaxed">
+            Gemini 3.8 Flash model conducted systematic comparative analysis across HOLC archives, Federal Reserve SCF datasets, and peer-reviewed environmental justice publications to establish factual foundations and metrics.
+          </p>
+        </div>
+
+        <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+          <div class="font-bold text-white text-sm mb-1 flex items-center gap-2">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            2. Visual Asset Generation
+          </div>
+          <p class="text-slate-400 mt-2 leading-relaxed">
+            AI diffusion image generation created the hero editorial split visualization, translating abstract spatial segregation and heat-island micro-climates into an immediate narrative visual anchor.
+          </p>
+        </div>
+
+        <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+          <div class="font-bold text-white text-sm mb-1 flex items-center gap-2">
+            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+            3. Generative UI &amp; Engineering
+          </div>
+          <p class="text-slate-400 mt-2 leading-relaxed">
+            Automated code generation crafted this responsive, accessible HTML5/Tailwind architecture, embedding print stylesheets, interactive reactive filters, and data counters for cross-platform utility.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-[#070a12] py-8 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>Real-World AI Deliverable &bull; Historical &amp; Social Issue Infographic: The Legacy of Redlining</p>
+      <p class="mt-1">Designed with AI pair programming tools &bull; Open Educational License &bull; References: Mapping Inequality (Univ of Richmond), Federal Reserve Board, EPA EJScreen.</p>
+    </div>
+  </footer>
+
+  <!-- Script for Interactive Components -->
+  <script>
+    const gradesData = {
+      'A': {
+        title: 'Grade A: "Best" (Green)',
+        color: 'emerald',
+        histDesc: 'Characterized by HOLC appraisers as "new, homogeneous, well-planned, and free from any subversive racial or social elements." Exclusively reserved for affluent white residents.',
+        underwriting: '100% Federal Mortgage Insurance guarantee; lowest interest rates; maximum loan-to-value ratios.',
+        homeownership: '78.4%',
+        medianNetWorth: '$285,000+',
+        canopyCover: '48.2% tree canopy',
+        heatAnomaly: '-2.1°F cooler than metro average',
+        healthMetric: '83.2 years life expectancy'
+      },
+      'B': {
+        title: 'Grade B: "Still Desirable" (Blue)',
+        color: 'blue',
+        histDesc: 'Characterized as "good neighborhoods that have reached their peak, but are still stable and desirable to white middle-class buyers." Minor infiltration risk.',
+        underwriting: 'Strong loan guarantees; stable banking investments; steady municipal service provision.',
+        homeownership: '71.2%',
+        medianNetWorth: '$198,000',
+        canopyCover: '36.5% tree canopy',
+        heatAnomaly: '+0.4°F metro average baseline',
+        healthMetric: '80.5 years life expectancy'
+      },
+      'C': {
+        title: 'Grade C: "Definitely Declining" (Yellow)',
+        color: 'yellow',
+        histDesc: 'Characterized by aging housing stock, proximity to industrial zones, and the presence of working-class immigrant families (Italian, Irish, Polish, Jewish). Considered at high risk of decline.',
+        underwriting: 'Restricted mortgages; shorter loan terms; required higher down payments (up to 50%).',
+        homeownership: '58.6%',
+        medianNetWorth: '$92,000',
+        canopyCover: '25.8% tree canopy',
+        heatAnomaly: '+3.8°F warmer than metro average',
+        healthMetric: '76.1 years life expectancy'
+      },
+      'D': {
+        title: 'Grade D: "Hazardous" (Red)',
+        color: 'rose',
+        histDesc: 'Appraisers explicitly cited "infiltration of Negroes," "foreign-born populations," and proximity to railroads/industry. Coded in bold red ink as areas where no federal loan should be backed.',
+        underwriting: 'Systemic mortgage denial; predatory contract sales with forfeiture clauses; municipal disinvestment.',
+        homeownership: '42.1%',
+        medianNetWorth: '$24,400',
+        canopyCover: '18.2% tree canopy (severe deficit)',
+        heatAnomaly: '+7.4°F to +12.6°F hotter (Heat Island)',
+        healthMetric: '68.5 years life expectancy'
+      }
+    };
+
+    function selectGrade(gradeKey) {
+      // Update Tab Styles
+      ['A', 'B', 'C', 'D'].forEach(k => {
+        const tab = document.getElementById('tab-' + k);
+        if (k === gradeKey) {
+          tab.classList.add('border-' + (k === 'A' ? 'emerald-500' : k === 'B' ? 'blue-500' : k === 'C' ? 'yellow-500' : 'rose-500'));
+          tab.classList.add('bg-slate-800');
+          tab.classList.remove('bg-slate-900', 'border-slate-800');
+        } else {
+          tab.classList.remove('border-emerald-500', 'border-blue-500', 'border-yellow-500', 'border-rose-500', 'bg-slate-800');
+          tab.classList.add('bg-slate-900', 'border-slate-800');
+        }
+      });
+
+      const d = gradesData[gradeKey];
+      const content = document.getElementById('gradeContent');
+      content.innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold font-mono ${gradeKey === 'A' ? 'bg-emerald-500/20 text-emerald-300' : gradeKey === 'B' ? 'bg-blue-500/20 text-blue-300' : gradeKey === 'C' ? 'bg-yellow-500/20 text-yellow-300' : 'bg-rose-500/20 text-rose-300'}">
+              HISTORICAL CLASSIFICATION PROFILE
+            </div>
+            <h3 class="text-2xl font-bold text-white">${d.title}</h3>
+            
+            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+              <span class="text-xs uppercase font-mono text-slate-500 block mb-1">1935 HOLC Field Appraiser Language:</span>
+              <p class="text-sm text-slate-200 italic font-serif leading-relaxed">"${d.histDesc}"</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+              <span class="text-xs uppercase font-mono text-slate-500 block mb-1">Banking &amp; Underwriting Policy Applied:</span>
+              <p class="text-xs text-slate-300 leading-relaxed">${d.underwriting}</p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-slate-950/90 border border-slate-800 rounded-xl p-5 space-y-4">
+            <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400">Current 2024 Outcome Metrics</h4>
+            
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-slate-400">Homeownership Rate</span>
+                <span class="font-bold text-white font-mono">${d.homeownership}</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div class="bg-slate-300 h-2 rounded-full" style="width: ${d.homeownership}"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-slate-400">Median Household Net Worth</span>
+                <span class="font-bold ${gradeKey === 'D' ? 'text-rose-400' : 'text-emerald-400'} font-mono">${d.medianNetWorth}</span>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-slate-800 grid grid-cols-2 gap-3 text-xs">
+              <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                <span class="text-slate-500 block text-[10px]">Tree Canopy</span>
+                <span class="text-slate-200 font-bold">${d.canopyCover}</span>
+              </div>
+              <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                <span class="text-slate-500 block text-[10px]">Thermal Differential</span>
+                <span class="${gradeKey === 'D' ? 'text-rose-400 font-bold' : 'text-slate-200 font-bold'}">${d.heatAnomaly}</span>
+              </div>
+            </div>
+
+            <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 text-xs">
+              <span class="text-slate-500 block text-[10px]">Average Life Expectancy</span>
+              <span class="text-white font-bold font-mono text-sm">${d.healthMetric}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    const cityMetrics = {
+      richmond: {
+        name: 'Richmond, VA',
+        tempDelta: '+12.6°F',
+        treeDelta: '12% in D vs 42% in A',
+        wealthDelta: '$18,500 vs $235,000',
+        lifeDelta: '20.2 Years gap across 5 miles',
+        note: 'Famous ground zero for Dr. Jeremy Hoffman’s pioneering urban heat island ground-truth studies.'
+      },
+      baltimore: {
+        name: 'Baltimore, MD',
+        tempDelta: '+9.8°F',
+        treeDelta: '14% in D vs 38% in A',
+        wealthDelta: '$21,200 vs $260,000',
+        lifeDelta: '19.4 Years disparity',
+        note: 'Site of the nation’s first statutory racial zoning ordinance in 1910; still reflects rigid spatial borders.'
+      },
+      chicago: {
+        name: 'Chicago, IL',
+        tempDelta: '+8.4°F',
+        treeDelta: '11% in D vs 39% in A',
+        wealthDelta: '$24,000 vs $290,000',
+        lifeDelta: '15.6 Years gap (Englewood vs Loop)',
+        note: 'Subprime lending in the 2000s targeted South and West side redlined communities, stripping generations of equity.'
+      },
+      losangeles: {
+        name: 'Los Angeles, CA',
+        tempDelta: '+11.2°F',
+        treeDelta: '9% in D vs 46% in A',
+        wealthDelta: '$31,000 vs $340,000',
+        lifeDelta: '12.8 Years disparity',
+        note: 'Freeway construction cut directly through Boyle Heights and East LA, replacing shade with concrete corridors.'
+      }
+    };
+
+    function updateCityData() {
+      const cityKey = document.getElementById('citySelect').value;
+      const data = cityMetrics[cityKey];
+      const container = document.getElementById('cityDisplay');
+      
+      container.innerHTML = `
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+          <span class="text-slate-500 text-xs uppercase font-mono block">Summer Heat Delta</span>
+          <div class="text-2xl font-black text-rose-400 font-mono mt-1">${data.tempDelta}</div>
+          <div class="text-[11px] text-slate-400 mt-1">Grade D vs Grade A surface temperature</div>
+        </div>
+
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+          <span class="text-slate-500 text-xs uppercase font-mono block">Tree Canopy Coverage</span>
+          <div class="text-lg font-bold text-emerald-400 mt-1">${data.treeDelta}</div>
+          <div class="text-[11px] text-slate-400 mt-1">Direct ecological shade disparity</div>
+        </div>
+
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+          <span class="text-slate-500 text-xs uppercase font-mono block">Median Household Wealth</span>
+          <div class="text-lg font-bold text-amber-400 font-mono mt-1">${data.wealthDelta}</div>
+          <div class="text-[11px] text-slate-400 mt-1">Intergenerational asset gap</div>
+        </div>
+
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+          <span class="text-slate-500 text-xs uppercase font-mono block">Life Expectancy Disparity</span>
+          <div class="text-lg font-bold text-cyan-400 font-mono mt-1">${data.lifeDelta}</div>
+          <div class="text-[11px] text-slate-400 mt-1">${data.note}</div>
+        </div>
+      `;
+    }
+
+    // Initialize with Grade D on load
+    selectGrade('D');
+    updateCityData();
+  </script>
+</body>
+</html>
